@@ -983,7 +983,7 @@
                 "roasts_own_coffee" : true,
                 "activity" : ["grabngo", "chill", "friends", "study"],
                 "images" : {
-                    "main" : "images/sterlingmain.JPG",
+                    "main" : "sterlingmain.JPG",
                     "secondary" : "https://s3-media0.fl.yelpcdn.com/bphoto/XiA3C8tN8AgkUCJv_b_RsQ/o.jpg",
                     "tertiary" : "images/sterlingthree.JPG",
                     "credits" : ""
