@@ -5,6 +5,8 @@
  * CSIS 304 Final Project
  */
 
+$(document).ready(getJSONData);
+
 /***************** LOAD MAPBOX MAP WITH LOCATIONS *****************/
 /* Function to get and return the coffee shop JSON data */
 function getJSONData() {
