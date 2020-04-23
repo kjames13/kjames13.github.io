@@ -1486,13 +1486,12 @@ function getJSONData() {
         dataType: "json",
         success: function(data) {
             console.log("success!");
-            var coffeeShopList = data.features;
+            return data.features;
         },
         error: function() {
             console.log("error!");
         }
     });
-    return coffeeShopList;
 }
 
 /* Function to display each location's name and address in the sidebar as a list */
