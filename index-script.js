@@ -1440,7 +1440,7 @@ var data = {
 
 /***************** LOAD MAPBOX MAP WITH LOCATIONS *****************/
 
-//var coffeeShopList = data.features;
+var coffeeShopList = getJSONData();
 mapboxgl.accessToken = "pk.eyJ1Ijoia2phbWVzMTciLCJhIjoiY2s4cndtOTVyMDJ1dDNlcGFueWMwYWR1NiJ9.pxxSphkpk-gqZpsTxthRFg";
 
 //create new map object
@@ -1452,7 +1452,7 @@ var map = new mapboxgl.Map({
 });
 
 //assign unique id to each coffee shop
-$.each(getJSONData(), function(i, store) {
+$.each(coffeeShopList, function(i, store) {
     console.log(i);
     store.properties.id = i;
 });
