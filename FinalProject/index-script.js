@@ -113,6 +113,31 @@ function loadPage(data) {
     
         displayListingBelow(clickedListing);
     });
+
+    /* Function to "fly" to the clicked-on store */
+    function flyToStore(currentFeature) {
+        map.flyTo({
+            center: currentFeature.geometry.coordinates,
+            zoom: 14
+        });
+    }
+
+    /* Function to display the styled popup window when a store is clicked on */
+    function displayPopUp(currentFeature) {
+        var popUps = $(".mapboxgl-popup");
+
+        //if there's already an open popup, close it
+        if (popUps[0]) {
+            popUps[0].remove();
+        }
+
+        var popup = new mapboxgl.Popup({
+            closeOnClick: true
+        });
+        popup.setLngLat(currentFeature.geometry.coordinates)
+        popup.setHTML(`<h3>${currentFeature.properties.name}</h3>`)
+        popup.addTo(map);
+    }
 }
 
 /* Function to display each location's name and address in the sidebar as a list */
@@ -135,30 +160,7 @@ function displayLocationList(coffeeShopList) {
 /***************** LOCATIONS IN SIDEBAR ARE CLICKED *****************/
 
 
-/* Function to "fly" to the clicked-on store */
-function flyToStore(currentFeature) {
-    map.flyTo({
-        center: currentFeature.geometry.coordinates,
-        zoom: 14
-    });
-}
 
-/* Function to display the styled popup window when a store is clicked on */
-function displayPopUp(currentFeature) {
-    var popUps = $(".mapboxgl-popup");
-
-    //if there's already an open popup, close it
-    if (popUps[0]) {
-        popUps[0].remove();
-    }
-
-    var popup = new mapboxgl.Popup({
-        closeOnClick: true
-    });
-    popup.setLngLat(currentFeature.geometry.coordinates)
-    popup.setHTML(`<h3>${currentFeature.properties.name}</h3>`)
-    popup.addTo(map);
-}
 
 /* Function to display the store's information below the map */
 function displayListingBelow(currentFeature) {
