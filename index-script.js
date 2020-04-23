@@ -1468,6 +1468,7 @@ var map = new mapboxgl.Map({
 
 //assign unique id to each coffee shop
 $.each(coffeeShopList, function(i, store) {
+    console.log(i);
     store.properties.id = i;
 });
 
