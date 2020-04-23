@@ -91,6 +91,28 @@ function loadPage(data) {
         map.getCanvas().style.cursor = "";
         popup.remove();
     });
+
+    $(document).on("click", "a", function(e) {
+        console.log("listing clicked");
+    
+        //get the id of this listing
+        var id = $(this).attr("id").replace("link-", "");
+    
+        //fly to this listing and display its respective popup
+        var clickedListing = data.features[id];
+        flyToStore(clickedListing);
+        displayPopUp(clickedListing);
+    
+        //if a link is currently active, remove its active class so only one lising is active at a time
+        if ($(".active:first")) {
+            $(".active:first").removeClass("active");
+        }
+    
+        //make the clicked link active
+        $(this).parent().addClass("active");
+    
+        displayListingBelow(clickedListing);
+    });
 }
 
 /* Function to display each location's name and address in the sidebar as a list */
@@ -111,27 +133,7 @@ function displayLocationList(coffeeShopList) {
 
 
 /***************** LOCATIONS IN SIDEBAR ARE CLICKED *****************/
-$(document).on("click", "a", function(e) {
-    console.log("listing clicked");
 
-    //get the id of this listing
-    var id = $(this).attr("id").replace("link-", "");
-
-    //fly to this listing and display its respective popup
-    var clickedListing = data.features[id];
-    flyToStore(clickedListing);
-    displayPopUp(clickedListing);
-
-    //if a link is currently active, remove its active class so only one lising is active at a time
-    if ($(".active:first")) {
-        $(".active:first").removeClass("active");
-    }
-
-    //make the clicked link active
-    $(this).parent().addClass("active");
-
-    displayListingBelow(clickedListing);
-});
 
 /* Function to "fly" to the clicked-on store */
 function flyToStore(currentFeature) {
