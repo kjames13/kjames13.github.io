@@ -611,7 +611,7 @@
                 "roasts_own_coffee" : true,
                 "activity" : ["grabngo", "chill", "study", "friends"],
                 "images" : {
-                    "main" : "casestudymain.JPG",
+                    "main" : "images/casestudymain.JPG",
                     "secondary" : "https://s3-media0.fl.yelpcdn.com/bphoto/K-PNd06BZ8oO-AvpMjR8gw/o.jpg",
                     "tertiary" : "https://s3-media0.fl.yelpcdn.com/bphoto/h0_UiOGU_sBppcQJlkQ00w/o.jpg",
                     "credits" : ""
@@ -890,7 +890,7 @@
                 "roasts_own_coffee" : true,
                 "activity" : ["grabngo", "chill", "friends", "study"],
                 "images" : {
-                    "main" : "baristanobhill.JPG",
+                    "main" : "images/baristanobhill.JPG",
                     "secondary" : "https://s3-media0.fl.yelpcdn.com/bphoto/08SLxzjkWGxHbZ7bnKVDAA/o.jpg",
                     "tertiary" : "https://s3-media0.fl.yelpcdn.com/bphoto/Oc9DuWWPuQa1TDGEpIJ9jQ/o.jpg",
                     "credits" : ""
@@ -983,9 +983,9 @@
                 "roasts_own_coffee" : true,
                 "activity" : ["grabngo", "chill", "friends", "study"],
                 "images" : {
-                    "main" : "sterlingmain.JPG",
+                    "main" : "images/sterlingmain.JPG",
                     "secondary" : "https://s3-media0.fl.yelpcdn.com/bphoto/XiA3C8tN8AgkUCJv_b_RsQ/o.jpg",
-                    "tertiary" : "sterlingthree.JPG",
+                    "tertiary" : "images/sterlingthree.JPG",
                     "credits" : ""
                 },
                 "blurb" : {

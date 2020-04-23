@@ -1438,7 +1438,8 @@ var data = {
 }
 
 /***************** GENERATE COFFEE CRAWL LIST FROM FORM *****************/
-var coffeeShopList = data.features;
+var coffeeShopList = getJSONData();
+
 $("#submit-button").click(function() {
     //if form is valid, find all coffee shops from JSON data that match the description specified
     if (validateForm()) {
@@ -1501,6 +1502,23 @@ $("#submit-button").click(function() {
         $("#list").append("<h4 id=\"fyi\">Please complete the form!</h4>");
     }
 });
+
+/* Function to get and return the coffee shop JSON data */
+function getJSONData() {
+    $.ajax({
+        type: "GET",
+        crossDomain: true,
+        url: "data.json",
+        dataType: "json",
+        success: function(data) {
+            console.log("success!");
+            return data.features;
+        },
+        error: function() {
+            console.log("error!");
+        }
+    });
+}
 
 /* Function to validate the submitted form. The form is valid iff all fields have been completed */
 function validateForm() {
