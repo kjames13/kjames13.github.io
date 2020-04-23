@@ -1438,8 +1438,23 @@ var data = {
 }
 
 /***************** GENERATE COFFEE CRAWL LIST FROM FORM *****************/
+/* Function to get and return the coffee shop JSON data */
+function getJSONData() {
+    $.ajax({
+        type: "GET",
+        crossDomain: true,
+        url: "data.json",
+        dataType: "json",
+        success: function(data) {
+            console.log("success!");
+            //console.log(data);
+        }
+        
+    });
+    return data;
+}
+
 var data = getJSONData();
-console.log(data);
 var coffeeShopList = data.features;
 
 $("#submit-button").click(function() {
@@ -1504,24 +1519,6 @@ $("#submit-button").click(function() {
         $("#list").append("<h4 id=\"fyi\">Please complete the form!</h4>");
     }
 });
-
-/* Function to get and return the coffee shop JSON data */
-function getJSONData() {
-    $.ajax({
-        type: "GET",
-        crossDomain: true,
-        url: "data.json",
-        dataType: "json",
-        success: function(data) {
-            console.log("success!");
-            console.log(data);
-            return data;
-        },
-        error: function() {
-            console.log("error!");
-        }
-    });
-}
 
 /* Function to validate the submitted form. The form is valid iff all fields have been completed */
 function validateForm() {

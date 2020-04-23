@@ -1448,8 +1448,7 @@ function getJSONData() {
         dataType: "json",
         success: function(data) {
             console.log("success!");
-            console.log(data);
-
+            //console.log(data);
         }
         
     });
@@ -1457,7 +1456,6 @@ function getJSONData() {
 }
 
 var data = getJSONData();
-console.log(data);
 var coffeeShopList = data.features;
 mapboxgl.accessToken = "pk.eyJ1Ijoia2phbWVzMTciLCJhIjoiY2s4cndtOTVyMDJ1dDNlcGFueWMwYWR1NiJ9.pxxSphkpk-gqZpsTxthRFg";
 
