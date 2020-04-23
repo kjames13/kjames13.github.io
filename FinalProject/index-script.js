@@ -1488,6 +1488,7 @@ function getJSONData() {
         dataType: "json",
         success: function(data) {
             console.log("success!");
+            console.log(data);
             return data;
         },
         error: function() {
