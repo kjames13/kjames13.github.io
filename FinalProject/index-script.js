@@ -15,49 +15,49 @@ function getJSONData() {
         dataType: "json",
         success: function(data) {
             console.log("success!");
-            //console.log(data);
+            loadPage(data);
         }
         
     });
-    return data;
 }
 
-var data = getJSONData();
-var coffeeShopList = data.features;
-mapboxgl.accessToken = "pk.eyJ1Ijoia2phbWVzMTciLCJhIjoiY2s4cndtOTVyMDJ1dDNlcGFueWMwYWR1NiJ9.pxxSphkpk-gqZpsTxthRFg";
+function loadPage(data) {
+    var coffeeShopList = data.features;
+    mapboxgl.accessToken = "pk.eyJ1Ijoia2phbWVzMTciLCJhIjoiY2s4cndtOTVyMDJ1dDNlcGFueWMwYWR1NiJ9.pxxSphkpk-gqZpsTxthRFg";
 
-//create new map object
-var map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mapbox/light-v10",
-    center: [-122.6750, 45.5051],
-    zoom: 12
-});
-
-//assign unique id to each coffee shop
-$.each(coffeeShopList, function(i, store) {
-    store.properties.id = i;
-});
-
-//load map
-map.on("load", function(e) {
-    //add data to map as a layer
-    map.addLayer({
-        "id": "locations",
-        "type": "symbol",
-        "source": {
-            "type" : "geojson",
-            "data": data
-        },
-        "layout": {
-            //TODO change icon image
-            "icon-image": "cafe-15",
-            "icon-size": 1.4,
-            "icon-allow-overlap": true
-        }
+    //create new map object
+    var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/light-v10",
+        center: [-122.6750, 45.5051],
+        zoom: 12
     });
-    displayLocationList(data);
-});
+
+    //assign unique id to each coffee shop
+    $.each(coffeeShopList, function(i, store) {
+        store.properties.id = i;
+    });
+
+    //load map
+    map.on("load", function(e) {
+        //add data to map as a layer
+        map.addLayer({
+            "id": "locations",
+            "type": "symbol",
+            "source": {
+                "type" : "geojson",
+                "data": data
+            },
+            "layout": {
+                //TODO change icon image
+                "icon-image": "cafe-15",
+                "icon-size": 1.4,
+                "icon-allow-overlap": true
+            }
+        });
+        displayLocationList(data);
+    });
+}
 
 /* Function to display each location's name and address in the sidebar as a list */
 function displayLocationList(data) {
