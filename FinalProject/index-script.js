@@ -22,7 +22,9 @@ function getJSONData() {
 }
 
 function loadPage(data) {
+    console.log("reached loadpage function");
     var coffeeShopList = data.features;
+    console.log(coffeeShopList);
     mapboxgl.accessToken = "pk.eyJ1Ijoia2phbWVzMTciLCJhIjoiY2s4cndtOTVyMDJ1dDNlcGFueWMwYWR1NiJ9.pxxSphkpk-gqZpsTxthRFg";
 
     //create new map object
