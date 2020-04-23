@@ -1439,14 +1439,16 @@ var data = {
 
 
 /***************** LOAD MAPBOX MAP WITH LOCATIONS *****************/
+var coffeeShopList;
+
 $.ajax({
     type: "GET",
     crossDomain: true,
     url: "data.json",
-    dataType: "",
+    dataType: "json",
     success: function(data) {
         console.log("success!");
-        var coffeeShopList = data.features;
+        coffeeShopList = data.features;
     },
     error: function() {
         console.log("error!");
