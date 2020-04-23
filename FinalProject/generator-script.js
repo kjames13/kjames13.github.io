@@ -91,7 +91,7 @@ function loadPage(data) {
     /* Function to display the coffee crawl list */
     function displayList(list) {
         $("#list").append("<h2 class=\"list-title\">Your Very Own Coffee Crawl</h2>");
-
+        
         displayOptimizedPath(list);
 
         $.each(list, function(i, store) {

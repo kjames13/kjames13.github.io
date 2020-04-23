@@ -19,7 +19,6 @@ function getJSONData() {
             console.log("success!");
             loadPage(data);
         }
-        
     });
 }
 
