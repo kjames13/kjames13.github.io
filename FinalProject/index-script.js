@@ -59,7 +59,7 @@ function loadPage(data) {
                 "icon-allow-overlap": true
             }
         });
-        displayLocationList(data);
+        displayLocationList(coffeeShopList);
     });
 
     /***************** POPUPS ON HOVER *****************/
@@ -94,7 +94,7 @@ function loadPage(data) {
 }
 
 /* Function to display each location's name and address in the sidebar as a list */
-function displayLocationList(data) {
+function displayLocationList(coffeeShopList) {
     $.each(coffeeShopList, function(i, store) {
         var prop = store.properties;
 
