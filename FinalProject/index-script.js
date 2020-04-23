@@ -1439,6 +1439,23 @@ var data = {
 
 
 /***************** LOAD MAPBOX MAP WITH LOCATIONS *****************/
+/* Function to get and return the coffee shop JSON data */
+function getJSONData() {
+    $.ajax({
+        type: "GET",
+        crossDomain: true,
+        url: "data.json",
+        dataType: "json",
+        success: function(data) {
+            console.log("success!");
+            console.log(data);
+            return data;
+        },
+        error: function() {
+            console.log("error!");
+        }
+    });
+}
 
 var data = getJSONData();
 console.log(data);
@@ -1478,24 +1495,6 @@ map.on("load", function(e) {
     });
     displayLocationList(data);
 });
-
-/* Function to get and return the coffee shop JSON data */
-function getJSONData() {
-    $.ajax({
-        type: "GET",
-        crossDomain: true,
-        url: "data.json",
-        dataType: "json",
-        success: function(data) {
-            console.log("success!");
-            console.log(data);
-            return data;
-        },
-        error: function() {
-            console.log("error!");
-        }
-    });
-}
 
 /* Function to display each location's name and address in the sidebar as a list */
 function displayLocationList(data) {
