@@ -1,0 +1,117 @@
+<!--
+    Katie James
+    Coffee Crawl
+    List Generator Page
+    CSIS 304 Final Project
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Coffee Crawl</title>
+
+        <!--jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--Turf JS library-->
+        <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+        <!--Mapbox API-->
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+        <!--FontAwesome Icons-->
+        <script src="https://kit.fontawesome.com/17a9bc9f4d.js" crossorigin="anonymous"></script>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <!--My Stuff-->
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--SITE HEADER-->
+        <div id="site-header">
+            <button id="return-home" class="btn" onclick="window.location.href='index.html';"><span>Home</span></button>
+            <div class="text-center">
+                <img src="coffeeCrawlHeader.png" alt="coffee crawl header" class="img-fluid">
+            </div>
+        </div>
+        <!--SITE HEADER-->
+
+        <!--PAGE BODY-->
+        <div id="page-body">
+            <!--PAGE HEADER-->
+            <div id="page-header" class="black">
+                <h3>Create your own coffee crawl list!</h3>
+                <p>Specify your desired features in a coffee shop to randomly generate a<br>list of shops
+                personally tailored for your own coffee crawl.</p>
+            </div>
+            <!--PAGE HEADER-->
+            
+            <!--FORM-->
+            <div id="form">
+                <div class="form-group row justify-content-md-center">
+                    <label class="col-auto col-form-label" for="num">Number of shops to hit: </label>
+                    <div class="col-3">
+                        <input class="form-control" type="number" name="num" id="num" min="1" max="10" required>
+                    </div>
+                </div>
+
+                <div class="form-row form-group">
+                    <div class="col">
+                        <select class="form-control" name="coffee-type" id="coffee-type" required>
+                            <option disabled selected value="none">My Coffee of Choice:</option>
+                            <option value="drip">Plain ol' drip</option>
+                            <option value="pourover">Pourover (because I'm extra like that)</option>
+                            <option value="frenchpress">French Press (because I'm super extra like that)</option>
+                            <option value="espresso">Espresso</option>
+                            <option value="lattes">Lattes & Mochas</option>
+                            <option value="coldbrew">Cold Brew</option>
+                            <option value="tea">Not a coffee fan..can "Tea Crawl" be a thing?</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select class="form-control" name="food-options" id="food-options" required>
+                            <option disabled selected value="none">I'm interested in items besides coffee..</option>
+                            <option value="coffee">Nah..I'm good with just my coffee</option>
+                            <option value="pastries">Give me all the pastries and baked goods</option>
+                            <option value="food">I'm gonna need a full food option please</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row form-group">
+                    <div class="col">
+                        <select class="form-control" name="activity" id="activity" required>
+                            <option disabled selected value="none">What I like to do while in the shop:</option>
+                            <option value="grabngo">Grab-N-Go</option>
+                            <option value="study">Study (aka wifi, tables & outlets are a must)</option>
+                            <option value="chill">Chill & Hang Out</option>
+                            <option value="friends">Chat with Friends</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <input class="form-control-input" type="checkbox" name="roast" id="roast">
+                        <label class="form-control-label" for="roast">I prefer for them to roast their own beans</label>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-md-center">
+                    <button class="form-group btn" id="submit-button" type="submit"><span>Submit</span></button>
+                </div>
+            </div>
+            <!--FORM-->
+
+            <!--RESET-->
+            <div class="text-center">
+                <button id="reset-button" class="hidden btn"><span>Create Another</span></button>
+            </div>
+            <!--RESET-->
+
+            <!--RESULTANT COFFEE CRAWL LIST-->
+            <div id="list"></div>
+            <script src="generator-script.js"></script>
+            <!--RESULTANT COFFEE CRAWL LIST-->
+        </div>
+        <!--PAGE BODY-->
+    </body>
+</html>
