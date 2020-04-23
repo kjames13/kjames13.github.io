@@ -1449,12 +1449,11 @@ function getJSONData() {
         success: function(data) {
             console.log("success!");
             console.log(data);
-            return data;
-        },
-        error: function() {
-            console.log("error!");
+
         }
+        
     });
+    return data;
 }
 
 var data = getJSONData();
