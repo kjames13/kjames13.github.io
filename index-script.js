@@ -1443,7 +1443,7 @@ $.ajax({
     type: "GET",
     crossDomain: true,
     url: "data.json",
-    dataType: "json",
+    dataType: "",
     success: function(data) {
         console.log("success!");
         var coffeeShopList = data.features;
