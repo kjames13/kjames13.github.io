@@ -59,6 +59,36 @@ function loadPage(data) {
         });
         displayLocationList(data);
     });
+
+    /***************** POPUPS ON HOVER *****************/
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+
+    map.on("mouseenter", "locations", function(e) {
+        //change cursor to pointer
+        map.getCanvas().style.cursor = "pointer";
+
+        //get location coordinates and shop name
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var name = e.features[0].properties.name;
+
+        //ensure that if the map is zoomed out, the popup appears over the right location
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        //display popup and set its coordinates
+        popup.setLngLat(coordinates);
+        popup.setHTML(name);
+        popup.addTo(map);
+    });
+
+    map.on("mouseleave", "locations", function() {
+        map.getCanvas().style.cursor = "";
+        popup.remove();
+    });
 }
 
 /* Function to display each location's name and address in the sidebar as a list */
@@ -161,32 +191,4 @@ function displayListingBelow(currentFeature) {
 }
 
 
-/***************** POPUPS ON HOVER *****************/
-var popup = new mapboxgl.Popup({
-    closeButton: false,
-    closeOnClick: false
-});
 
-map.on("mouseenter", "locations", function(e) {
-    //change cursor to pointer
-    map.getCanvas().style.cursor = "pointer";
-
-    //get location coordinates and shop name
-    var coordinates = e.features[0].geometry.coordinates.slice();
-    var name = e.features[0].properties.name;
-
-    //ensure that if the map is zoomed out, the popup appears over the right location
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
-
-    //display popup and set its coordinates
-    popup.setLngLat(coordinates);
-    popup.setHTML(name);
-    popup.addTo(map);
-});
-
-map.on("mouseleave", "locations", function() {
-    map.getCanvas().style.cursor = "";
-    popup.remove();
-});
