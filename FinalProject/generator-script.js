@@ -1438,7 +1438,9 @@ var data = {
 }
 
 /***************** GENERATE COFFEE CRAWL LIST FROM FORM *****************/
-var coffeeShopList = getJSONData();
+var data = getJSONData();
+console.log(data);
+var coffeeShopList = data.features;
 
 $("#submit-button").click(function() {
     //if form is valid, find all coffee shops from JSON data that match the description specified
@@ -1512,7 +1514,7 @@ function getJSONData() {
         dataType: "json",
         success: function(data) {
             console.log("success!");
-            return data.features;
+            return data;
         },
         error: function() {
             console.log("error!");

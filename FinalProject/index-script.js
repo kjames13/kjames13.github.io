@@ -1440,7 +1440,9 @@ var data = {
 
 /***************** LOAD MAPBOX MAP WITH LOCATIONS *****************/
 
-var coffeeShopList = getJSONData();
+var data = getJSONData();
+console.log(data);
+var coffeeShopList = data.features;
 mapboxgl.accessToken = "pk.eyJ1Ijoia2phbWVzMTciLCJhIjoiY2s4cndtOTVyMDJ1dDNlcGFueWMwYWR1NiJ9.pxxSphkpk-gqZpsTxthRFg";
 
 //create new map object
@@ -1486,7 +1488,7 @@ function getJSONData() {
         dataType: "json",
         success: function(data) {
             console.log("success!");
-            return data.features;
+            return data;
         },
         error: function() {
             console.log("error!");
