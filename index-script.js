@@ -1439,21 +1439,6 @@ var data = {
 
 
 /***************** LOAD MAPBOX MAP WITH LOCATIONS *****************/
-var coffeeShopList;
-
-$.ajax({
-    type: "GET",
-    crossDomain: true,
-    url: "data.json",
-    dataType: "json",
-    success: function(data) {
-        console.log("success!");
-        coffeeShopList = data.features;
-    },
-    error: function() {
-        console.log("error!");
-    }
-});
 
 //var coffeeShopList = data.features;
 mapboxgl.accessToken = "pk.eyJ1Ijoia2phbWVzMTciLCJhIjoiY2s4cndtOTVyMDJ1dDNlcGFueWMwYWR1NiJ9.pxxSphkpk-gqZpsTxthRFg";
@@ -1467,7 +1452,7 @@ var map = new mapboxgl.Map({
 });
 
 //assign unique id to each coffee shop
-$.each(coffeeShopList, function(i, store) {
+$.each(getJSONData(), function(i, store) {
     console.log(i);
     store.properties.id = i;
 });
@@ -1491,6 +1476,24 @@ map.on("load", function(e) {
     });
     displayLocationList(data);
 });
+
+/* Function to get and return the coffee shop JSON data */
+function getJSONData() {
+    $.ajax({
+        type: "GET",
+        crossDomain: true,
+        url: "data.json",
+        dataType: "json",
+        success: function(data) {
+            console.log("success!");
+            var coffeeShopList = data.features;
+        },
+        error: function() {
+            console.log("error!");
+        }
+    });
+    return coffeeShopList;
+}
 
 /* Function to display each location's name and address in the sidebar as a list */
 function displayLocationList(data) {
