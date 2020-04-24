@@ -7,7 +7,6 @@
 
 $(document).ready(getJSONData);
 
-/***************** GENERATE COFFEE CRAWL LIST FROM FORM *****************/
 /* Function to get and return the coffee shop JSON data */
 function getJSONData() {
     $.ajax({
@@ -16,7 +15,7 @@ function getJSONData() {
         url: "data.json",
         dataType: "json",
         success: function(data) {
-            console.log("success!");
+            //console.log("success!");
             loadPage(data);
         }
     });
@@ -25,11 +24,13 @@ function getJSONData() {
 function loadPage(data) {
     var coffeeShopList = data.features;
 
+    /***************** GENERATE COFFEE CRAWL LIST FROM FORM *****************/
     $("#submit-button").click(function() {
         //if form is valid, find all coffee shops from JSON data that match the description specified
         if (validateForm()) {
-            console.log("valid form");
-            //Remove the list so that there is only one list displayed
+            //console.log("valid form");
+
+            //if there's already a list, remove it
             $("#list").empty();
 
             var coffeeCrawl = [];
@@ -68,7 +69,7 @@ function loadPage(data) {
                 }
             });
 
-            //Randomly remove shops from the list until left with the specified number of shops from form
+            //randomly remove shops from the list until left with the specified number of shops from form
             if (num < coffeeCrawl.length) {
                 var numToRemove = coffeeCrawl.length - num;
                 for (var i = 0; i < numToRemove; i++) {
@@ -78,6 +79,7 @@ function loadPage(data) {
 
             displayList(coffeeCrawl);
 
+            //if there aren't enough shops that match the description, display a message
             if (num > coffeeCrawl.length) {
                 $(".list-title").after("<h4 id=\"fyi\">(fyi, the number of shops that match your specifications is less than the number you specified!)");
             }
@@ -101,6 +103,7 @@ function loadPage(data) {
         $("#reset-button").removeClass("hidden");
     }
 
+    /***************** CREATE AND DISPLAY OPTIMIZED PATH *****************/
     /* Function to display the map with the optimized path between the generated coffee shops on the list */
     function displayOptimizedPath(list) {
         //create container for MapBox map
@@ -222,7 +225,7 @@ function loadPage(data) {
             return 'https://api.mapbox.com/optimized-trips/v1/mapbox/driving/' + coordinates.join(';') +  '?geometries=geojson&source=first&access_token=' + mapboxgl.accessToken;
         }
 
-        //create popups when hovering over locations on map
+        /***************** POPUPS ON HOVER *****************/
         var popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
@@ -253,8 +256,6 @@ function loadPage(data) {
     }
 }
 
-
-
 /* Function to validate the submitted form. The form is valid iff all fields have been completed */
 function validateForm() {
     var result = true;
@@ -263,8 +264,6 @@ function validateForm() {
     }
     return result;
 }
-
-
 
 /* Function to display the information of each store in the coffee crawl list */
 function displayStore(i, store) {
@@ -296,7 +295,6 @@ function displayStore(i, store) {
         </div>
     </div>`);
 
-    //TODO try to make jquery collapsible work
     //make each item in the list collapsible
     var coll = $(".collapsible");
 

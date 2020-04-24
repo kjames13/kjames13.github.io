@@ -7,7 +7,6 @@
 
 $(document).ready(getJSONData);
 
-/***************** LOAD MAPBOX MAP WITH LOCATIONS *****************/
 /* Function to get and return the coffee shop JSON data */
 function getJSONData() {
     $.ajax({
@@ -16,16 +15,17 @@ function getJSONData() {
         url: "data.json",
         dataType: "json",
         success: function(data) {
-            console.log("success!");
+            //console.log("success!");
             loadPage(data);
         }
     });
 }
 
+/* Function to load the map, popups, and sidebar listings */
 function loadPage(data) {
-    console.log("reached loadpage function");
+
+    /***************** LOAD MAPBOX MAP WITH LOCATIONS *****************/
     var coffeeShopList = data.features;
-    console.log(coffeeShopList);
     mapboxgl.accessToken = "pk.eyJ1Ijoia2phbWVzMTciLCJhIjoiY2s4cndtOTVyMDJ1dDNlcGFueWMwYWR1NiJ9.pxxSphkpk-gqZpsTxthRFg";
 
     //create new map object
@@ -91,8 +91,9 @@ function loadPage(data) {
         popup.remove();
     });
 
+    /***************** LOCATIONS IN SIDEBAR ARE CLICKED *****************/
     $(document).on("click", "a", function(e) {
-        console.log("listing clicked");
+        //console.log("listing clicked");
     
         //get the id of this listing
         var id = $(this).attr("id").replace("link-", "");
@@ -154,12 +155,6 @@ function displayLocationList(coffeeShopList) {
         $(`#listing-${prop.id}`).append(`<div>${prop.formatted_address}</div>`);
     });
 }
-
-
-/***************** LOCATIONS IN SIDEBAR ARE CLICKED *****************/
-
-
-
 
 /* Function to display the store's information below the map */
 function displayListingBelow(currentFeature) {
