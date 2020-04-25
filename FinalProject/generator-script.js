@@ -5,6 +5,10 @@
  * CSIS 304 Final Project
  */
 
+/*
+ * Uses the Turf JS library to convert data to geojson
+ */
+
 $(document).ready(getJSONData);
 
 /* Function to get and return the coffee shop JSON data */
