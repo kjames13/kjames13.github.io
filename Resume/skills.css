@@ -1,0 +1,206 @@
+/* Skills page CSS */
+
+/* fill entire page */
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* fill entire page */
+
+/* font */
+body * {
+    font-family: "Open Sans", sans-serif;
+}
+/* font */
+
+/* page title */
+.header {
+    margin-bottom: 0;
+    padding: 0px;
+    color: white;
+    background-image: url(https://i.pinimg.com/236x/73/b4/5b/73b45bb79dfff36b9166b84a5ae53e5a.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.header h1 {
+    /*font-family: "Rubik Mono One", sans-serif;*/
+    font-size: 60px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 700;
+}
+/* page title */
+
+/* nav bar */
+a {
+    text-decoration: none;
+}
+
+ul {
+    background-color: #B7C8CB;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    color: rgb(106, 134, 137);
+    background-color: #B7C8CB;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    width: 33.333%;
+    text-align: center;
+    font-size: 18px;
+}
+
+li a {
+    color: rgb(106, 134, 137);
+}
+
+li:hover {
+    background-color: #E8DDCD;
+    cursor: pointer;
+}
+
+nav li:hover a {
+    color: white;
+}
+
+/* submenu */
+ul li ul {
+    background-color: #B7C8CB;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+/* items in submenu */
+ul li ul li {
+    clear: both;
+    width: 100%;
+    color: rgb(106, 134, 137);
+}
+
+ul li ul li a {
+    color: rgb(106, 134, 137);
+}
+/* nav bar */
+
+/* headers */
+h2 {
+    font-size: 54px;
+    text-align: center;
+    font-weight: 300;
+    color: #D5861C;
+    margin-bottom: 20px;
+}
+/* headers */
+
+/* container */
+.container {
+    max-width: 1200px;
+    padding: 40px 180px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #2C393F;
+}
+/* container */
+
+/* section divider */
+hr {
+    margin: 40px 0px;
+    opacity: 0.2;
+    border: 0;
+    border-top: 2px solid rgb(213, 196, 180);
+}
+/* section divider */
+
+/* table */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 80px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    width: 50%;
+}
+
+td:hover {
+    background-color: rgb(238, 234, 228);
+}
+/* table */
+
+/* footer */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #B7C8CB;
+}
+
+.fa-linkedin {
+    color: white;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.fa-linkedin:hover {
+    color: rgb(106, 134, 137);
+    transition: all 0.5s ease;
+}
+
+.fa-envelope {
+    color: white;
+    margin-left: 20px;
+}
+
+.fa-envelope:hover {
+    color: rgb(106, 134, 137);
+    transition: all 0.5s ease;
+}
+/* footer */
