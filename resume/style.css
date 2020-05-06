@@ -1,5 +1,3 @@
-/* Experience page CSS */
-
 /* fill entire page */
 html {
     margin: 0px;
@@ -36,7 +34,6 @@ body * {
 }
 
 .header h1 {
-    /*font-family: "Rubik Mono One", sans-serif;*/
     font-size: 60px;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -48,18 +45,18 @@ body * {
 /* page title */
 
 /* nav bar */
-nav a {
+.navigation a {
     text-decoration: none;
 }
 
-nav ul {
+.navigation ul {
     background-color: #B7C8CB;
     list-style: none;
     margin: 0;
     padding-left: 0;
 }
 
-nav li {
+.navigation li {
     color: rgb(106, 134, 137);
     background-color: #B7C8CB;
     display: block;
@@ -73,21 +70,21 @@ nav li {
     font-size: 18px;
 }
 
-nav li a {
+.navigation li a {
     color: rgb(106, 134, 137);
 }
 
-nav li:hover {
+.navigation li:hover {
     background-color: #E8DDCD;
     cursor: pointer;
 }
 
-nav li:hover a {
+.navigation li:hover a {
     color: white;
 }
 
 /* submenu */
-nav ul li ul {
+.navigation ul li ul {
     background-color: #B7C8CB;
     visibility: hidden;
     opacity: 0;
@@ -99,56 +96,54 @@ nav ul li ul {
     display: none;
 }
 
-nav ul li:hover > ul,
-nav ul li ul:hover {
+.navigation ul li:hover > ul,
+.navigation ul li ul:hover {
     visibility: visible;
     opacity: 1;
     display: block;
 }
 
 /* items in submenu */
-nav ul li ul li {
+.navigation ul li ul li {
     clear: both;
     width: 100%;
+    color: rgb(106, 134, 137);
 }
 
-nav ul li ul li a {
+.navigation ul li ul li a {
     color: rgb(106, 134, 137);
 }
 /* nav bar */
 
 /* headers */
-/* experience */
-h2 {
+.container-header {
     font-size: 54px;
     text-align: center;
+    font-weight: 300;
+    color: #D5861C;
+    margin-bottom: 20px;
 }
 
-/* education/work */
-h3 {
+.subheader {
     font-size: 30px;
     margin: 20px 0px;
-}
-
-h2, h3 {
     font-weight: 300;
     color: #D5861C;
 }
 
-/* university/company */
-h4 {
+.company {
     font-weight: 900;
     margin: 10px 0px;
     font-size: 18px;
 }
 
-h5 {
+.date {
     font-size: 15px;
     font-weight: 300;
     margin-top: 16px;
 }
 
-strong {
+.job-title {
     display: block;
     margin-bottom: 10px;
     padding: 10px 0px 0px;
@@ -159,14 +154,43 @@ strong {
 /* container */
 .container {
     max-width: 1200px;
-    padding: 40px 180px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0px 180px;
+    margin: 80px auto 80px auto;
     color: #2C393F;
 }
 /* container */
+
+/* section divider */
+hr {
+    margin: 40px 0px;
+    opacity: 0.2;
+    border: 0;
+    border-top: 2px solid rgb(213, 196, 180);
+}
+/* section divider */
+
+/* about statement */
+p {
+    text-align: center;
+}
+/* about statement */
+
+/* quote */
+.quote-block {
+    padding-bottom: 0px;
+}
+
+.quote {
+    text-align: center;
+    font-size: 24px;
+    color: #D5861C;
+}
+
+.hardy {
+    text-align: right;
+    font-size: 15px;
+}
+/* quote */
 
 /* rows and columns */
 .column {
@@ -209,14 +233,29 @@ strong {
 }
 /* location icon */
 
-/* section divider */
-hr {
-    margin: 40px 0px;
-    opacity: 0.2;
-    border: 0;
-    border-top: 2px solid rgb(213, 196, 180);
+/* table */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 80px;
 }
-/* section divider */
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    width: 50%;
+}
+
+td:hover {
+    background-color: rgb(238, 234, 228);
+}
+/* table */
 
 /* footer */
 footer {
@@ -228,23 +267,17 @@ footer {
     background-color: #B7C8CB;
 }
 
-.fa-linkedin {
+.fa-envelope,
+.fa-linkedin,
+.fa-github {
     color: white;
     margin-left: 20px;
     padding-top: 10px;
 }
 
-.fa-linkedin:hover {
-    color: rgb(106, 134, 137);
-    transition: all 0.5s ease;
-}
-
-.fa-envelope {
-    color: white;
-    margin-left: 20px;
-}
-
-.fa-envelope:hover {
+.fa-envelope:hover,
+.fa-linkedin:hover,
+.fa-github:hover {
     color: rgb(106, 134, 137);
     transition: all 0.5s ease;
 }

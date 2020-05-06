@@ -1,15 +1,16 @@
-<!--kjames17@georgefox.edu--> 
-<!--2020-2-21-->
-<!--Personal Project-->
-<!--Home page-->
+<!--
+    kjames17@georgefox.edu
+    2020-2-21
+    Personal Project
+-->
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Personal Project Home</title>
+        <title>Katie James</title>
         
-        <link href="index.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
 
         <!--Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
@@ -25,60 +26,211 @@
         <!--Title-->
 
         <!--Nav Bar-->
-        <nav role="navigation">
+        <div class="navigation">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="experience.html">Experience</a>
+                <li><a href="#experience">Experience</a>
                     <ul class="dropdown">
-                        <li><a href="experience.html#education">Education</a></li>
-                        <li><a href="experience.html#work">Related Work</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#work">Related Work</a></li>
                     </ul>
                 </li>
-                <li><a href="skills.html">Skills</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+        </div>
         <!--Nav Bar-->
 
         <!--About-->
         <div class="container">
-            <a id="aboutMe"><h2>About Me</h2></a>
+            <a id="aboutMe"><h2 class="container-header">About Me</h2></a>
             <hr>
-            <div id="professionalstatement">
-                <p>
-                    Senior math major and student athlete pursuing a career of teaching mathematics.
-                    Dependable and diligent problem solver who is driven by achieving high-quality results.
-                    Provides a positive presence in team settings and balances being self-motivated with
-                    the ability to encourage potential within others through effective communication skills. 
-                </p>
-            </div>
+            <p>
+                Senior math major and student athlete pursuing a career of teaching mathematics.
+                Dependable and diligent problem solver who is driven by achieving high-quality results.
+                Provides a positive presence in team settings and balances being self-motivated with
+                the ability to encourage potential within others through effective communication skills. 
+            </p>
         </div>
         <!--About-->
 
-        <div class="container" id="quote-block">
-            <p id="quote"><em>Beauty if the first test: there is no permanent place in the world for ugly mathematics.</em></p>
-            <p id="hardy">G. H. Hardy</p>
+        <div class="container" class="quote-block">
+            <p class="quote"><em>Beauty is the first test: there is no permanent place in the world for ugly mathematics.</em></p>
+            <p class="hardy">G. H. Hardy</p>
         </div>
 
-        <img src="https://pbs.twimg.com/media/D5V8ZnZUcAAS6qD.jpg" alt="math" class="image">
-
-        <!--<div class="container">
-            <a id="randomThings"><h2>11 Random Things</h2></a>
-            <h4 class="subheader">A few facts, opinions, and perspectives.</h4>
+        <!--Experience-->
+        <div class="container">
+            <a id="experience"><h2 class="container-header">Experience</h2></a>
             <hr>
             <div>
-                <ol>
-                    <li>I've watched the series New Girl over 4 times through.</li>
-                    <li>Full supporter of the Oxford comma.</li>
-                    <li>I grew up in Vermont and truly believe fake maple syrup is a crime.</li>
-                    <li>Math is discovered, not invented.</li>
-                    <li>Running is funning.</li>
-                </ol>
+                <a id="education"><h3 class="subheader">Education</h3></a>
+
+                <div class="row">
+                    <div class="column left">
+                        <h4 class="company">George Fox University</h4>
+                        <h5 class="date">Aug 2017 - May 2021</h5>
+                    </div>
+                    <div class="column right">
+                        <strong class="job-title">Bachelor of Science - Mathematics & Computer Science</strong>
+                        <p>Awards and honors include Dean's List, Presidential Scholar Award, and
+                            USTFCCCA All-Academic Honors. Competed as a track & field athlete and earned
+                            an NCAA All-American title in Spring 2019.
+                        </p>
+                        <p>Key Coursework includes:
+                            <ul>
+                                <li>Ordinary Differential Equations</li>
+                                <li>Partial Differential Equations</li>
+                                <li>Real Analysis</li>
+                                <li>Numerical Methods</li>
+                                <li>Number Theory</li>
+                                <li>Probability & Statistics</li>
+                                <li>Advanced Linear Algebra</li>
+                                <li>Topology</li>
+                                <li>Data Structures</li>
+                                <li>Human Computer Interactions</li>
+                                <li>Web-Based Programming</li>
+                            </ul>
+                        </p>
+                        <span class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Newberg, OR</span>
+                        </span>
+                    </div>
+                </div>
             </div>
-        </div>-->
+            <hr>
+            <div>
+                <a id="work"><h3 class="subheader">Related Work</h3></a>
+
+                <div class="row">
+                    <div class="column left">
+                        <h4 class="company">Catalyst College</h4>
+                        <h5 class="date">Jan 2020 - present</h5>
+                    </div>
+                    <div class="column right">
+                        <strong class="job-title">Work Study Student</strong>
+                        <ul class="no-indent">
+                            <li>Tested and debugged the Catalyst platform on both the developing learning management system and WordPress site</li>
+                            <li>Improved the functionality and visual appearance of the system by collecting and reporting issues within the system</li>
+                            <li>Created sample courses and lessons for future tutorials of the system</li>
+                        </ul>
+                        <span class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Newberg, OR</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column left">
+                        <h4 class="company">George Fox University</h4>
+                        <h5 class="date">Aug 2018 - present</h5>
+                    </div>
+                    <div class="column right">
+                        <strong class="job-title">Teacher's Assistant & Grader</strong>
+                        <ul class="no-indent">
+                            <li>Administer all homework and quiz grades for courses including College Algebra, Calculus I/II, Discrete Mathematics, Introduction to Proofs, and Engineering Statistics</li>
+                            <li>Encourage and guide students in these specific courses</li>
+                            <li>Update and maintain an orderly online course page</li>
+                        </ul>
+                        <span class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Newberg, OR</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column left">
+                        <h4 class="company">SIMIODE</h4>
+                        <h5 class="date">Jul 2019</h5>
+                    </div>
+                    <div class="column right">
+                        <strong class="job-title">Faculty Developement Workshop Assistant</strong>
+                        <ul class="no-indent">
+                            <li>Provide feedback and a student’s perspective on modeling projects for supplemental curriculum in Differential Equations</li>
+                            <li>Perform logistical duties such as distributing supplies, printing materials, and taking notes during group discussions</li>
+                        </ul>
+                        <span class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Newberg, OR</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column left">
+                        <h4 class="company">George Fox University</h4>
+                        <h5 class="date">Aug 2018 - Dec 2019</h5>
+                    </div>
+                    <div class="column right">
+                        <strong class="job-title">Mathematics Tutor</strong>
+                        <ul class="no-indent">
+                            <li>Deconstruct and clearly explain problems for students struggling through various math courses</li>
+                            <li>Stay well-versed in all math courses up through Calculus III in order to answer any question from students</li>
+                        </ul>
+                        <span class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Newberg, OR</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Experience-->
+
+        <!--Skills-->
+        <div class="container">
+            <a id="skills"><h2 class="container-header">Skills</h2></a>
+            <hr>
+            <table>
+                <tr>
+                    <th>Hard</th>
+                    <th>Soft</th>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>Responsibility</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Time Management</td>
+                </tr>
+                <tr>
+                    <td>LaTeX</td>
+                    <td>People-Investor</td>
+                </tr>
+                <tr>
+                    <td>MATLAB</td>
+                    <td>Leadership</td>
+                </tr>
+                <tr>
+                    <td>HTML</td>
+                    <td>Creativity</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>Flexibility</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Problem-Solver</td>
+                </tr>
+            </table>
+        </div>
+        <!--Skills-->
+
+        <!--Contact-->
+        <div class="container">
+            <a id="contact"><h2 class="container-header">Contact</h2></a>
+            <p>Connect with me by clicking any of the icons below!</p>
+        </div>
+        <!--Contact-->
 
         <footer>
             <a href="mailto:katiejames1313@gmail.com"><i class="far fa-envelope fa-2x"></i></a>
-            <a href="http://www.linkedin.com/in/katie-faith-james/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/katie-faith-james/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/kjames13" target="_blank"><i class="fab fa-github fa-2x"></i></a>
         </footer>
     </body>
 </html>
