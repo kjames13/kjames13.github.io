@@ -1,0 +1,284 @@
+/* fill entire page */
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* fill entire page */
+
+/* font */
+body * {
+    font-family: "Open Sans", sans-serif;
+}
+/* font */
+
+/* page title */
+.header {
+    margin-bottom: 0;
+    padding: 0px;
+    color: white;
+    background-image: url(https://i.pinimg.com/236x/73/b4/5b/73b45bb79dfff36b9166b84a5ae53e5a.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.header h1 {
+    font-size: 60px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 700;
+}
+/* page title */
+
+/* nav bar */
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation ul {
+    background-color: #B7C8CB;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.navigation li {
+    color: rgb(106, 134, 137);
+    background-color: #B7C8CB;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    width: 33.333%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.navigation li a {
+    color: rgb(106, 134, 137);
+}
+
+.navigation li:hover {
+    background-color: #E8DDCD;
+    cursor: pointer;
+}
+
+.navigation li:hover a {
+    color: white;
+}
+
+/* submenu */
+.navigation ul li ul {
+    background-color: #B7C8CB;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+}
+
+.navigation ul li:hover > ul,
+.navigation ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+/* items in submenu */
+.navigation ul li ul li {
+    clear: both;
+    width: 100%;
+    color: rgb(106, 134, 137);
+}
+
+.navigation ul li ul li a {
+    color: rgb(106, 134, 137);
+}
+/* nav bar */
+
+/* headers */
+.container-header {
+    font-size: 54px;
+    text-align: center;
+    font-weight: 300;
+    color: #D5861C;
+    margin-bottom: 20px;
+}
+
+.subheader {
+    font-size: 30px;
+    margin: 20px 0px;
+    font-weight: 300;
+    color: #D5861C;
+}
+
+.company {
+    font-weight: 900;
+    margin: 10px 0px;
+    font-size: 18px;
+}
+
+.date {
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 16px;
+}
+
+.job-title {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px 0px 0px;
+    font-weight: 700;
+}
+/* headers */
+
+/* container */
+.container {
+    max-width: 1200px;
+    padding: 0px 180px;
+    margin: 80px auto 80px auto;
+    color: #2C393F;
+}
+/* container */
+
+/* section divider */
+hr {
+    margin: 40px 0px;
+    opacity: 0.2;
+    border: 0;
+    border-top: 2px solid rgb(213, 196, 180);
+}
+/* section divider */
+
+/* about statement */
+p {
+    text-align: center;
+}
+/* about statement */
+
+/* quote */
+.quote-block {
+    padding-bottom: 0px;
+}
+
+.quote {
+    text-align: center;
+    font-size: 24px;
+    color: #D5861C;
+}
+
+.hardy {
+    text-align: right;
+    font-size: 15px;
+}
+/* quote */
+
+/* rows and columns */
+.column {
+    float: left;
+}
+
+.left {
+    width: 30%;
+    margin-top: 0;
+}
+
+.right {
+    width: 70%;
+    margin-top: 0;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    margin-bottom: 40px;
+    margin-right: 0;
+    margin-left: 0;
+}
+/* rows and columns */
+
+/* bulleted list */
+.no-indent {
+    list-style-position: inside;
+    padding-left: 0;
+}
+/* bulleted list */
+
+/* location icon */
+.location {
+    color: #B7C8CB;
+}
+/* location icon */
+
+/* table */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 80px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    width: 50%;
+}
+
+td:hover {
+    background-color: rgb(238, 234, 228);
+}
+/* table */
+
+/* footer */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #B7C8CB;
+}
+
+.fa-envelope,
+.fa-linkedin,
+.fa-github {
+    color: white;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.fa-envelope:hover,
+.fa-linkedin:hover,
+.fa-github:hover {
+    color: rgb(106, 134, 137);
+    transition: all 0.5s ease;
+}
+/* footer */
